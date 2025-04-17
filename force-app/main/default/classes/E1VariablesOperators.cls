@@ -4,19 +4,20 @@ private with sharing class E1VariablesOperators {
     static void yourName() {
         //Create a variable that can hold your name
         //Ex: Warren Walters
-        
+        String myName = 'Bethania';
         /*REPLACE NULL WITH YOUR VARIABLE*/
-        System.assert(TestHelper.yourName(null));
+        System.assert(TestHelper.yourName(myName));
         /*REPLACE NULL WITH YOUR VARIABLE*/
     }
     
     @IsTest
     static void favoriteMovie() {
         //Create a variable that can hold your favorite movie name
+        String favMovie = 'Mullholand Drive';
         //Ex: Inception
         
         /*REPLACE NULL WITH YOUR VARIABLE*/
-        System.assert(TestHelper.favoriteMovie(null));
+        System.assert(TestHelper.favoriteMovie(favMovie));
         /*REPLACE NULL WITH YOUR VARIABLE*/
     }
     
@@ -24,9 +25,9 @@ private with sharing class E1VariablesOperators {
     static void yourHeight() {
         //Create a variable that can hold your name
         //Ex: 5 foot 9 inches = 5.9
-        
+        Decimal myHeight = 1.63;
         /*REPLACE NULL WITH YOUR VARIABLE*/
-        System.assert(TestHelper.yourHeight(null));
+        System.assert(TestHelper.yourHeight(myHeight));
         /*REPLACE NULL WITH YOUR VARIABLE*/
     }
     
@@ -34,9 +35,10 @@ private with sharing class E1VariablesOperators {
     static void socialMediaApps() {
         //Create a variable that can hold the number of social media apps on your phone
         //Ex: 5 - You cannot have a fraction of an app
-        
+        Integer myApps;
+        myApps = 4;
         /*REPLACE NULL WITH YOUR VARIABLE*/
-        System.assert(TestHelper.socialMediaApps(null));
+        System.assert(TestHelper.socialMediaApps(myApps));
         /*REPLACE NULL WITH YOUR VARIABLE*/
     }
     
@@ -44,17 +46,17 @@ private with sharing class E1VariablesOperators {
     static void earthRevolvesAroundTheSun () {
         //Create a variable that can holds the answer to the questions if the earth revolved around the sun
         //Ex: true or false
-        
+        Boolean orbit = true;
         /*REPLACE NULL WITH YOUR VARIABLE*/
-        System.assert(TestHelper.earthRevolvesAroundTheSun(null));
+        System.assert(TestHelper.earthRevolvesAroundTheSun(orbit));
         /*REPLACE NULL WITH YOUR VARIABLE*/
     }
     
     @IsTest
     static void numberOfDayInTheYear() {
         //Assign the variables daysInTheYear with the amount of days in the year
-        Integer daysInTheYear;
-        
+        Integer daysInTheYear = 365;
+
         /*DO NOT CHANGE BELOW*/
         System.assertEquals(365,daysInTheYear);
     }
@@ -63,11 +65,10 @@ private with sharing class E1VariablesOperators {
     static void lightSpeed(){
         //Turn the light speed variable into a constant
         //You may need to comment or sections or delete lines of code for this to work properly
-        Integer lightSpeed = 299792458;
-        lightSpeed = 133742069;
+        Final Integer LIGHT_SPEED = 299792458;
         
         /*YOU MAY NEED TO CHANGE THE VARIABLE NAME*/
-        System.assertEquals(299792458,lightSpeed);
+        System.assertEquals(299792458,LIGHT_SPEED);
         /*YOU MAY NEED TO CHANGE THE VARIABLE NAME*/
     }
     
@@ -75,7 +76,7 @@ private with sharing class E1VariablesOperators {
     static void valueOfPi(){
         //Turn the light speed variable into a constant
         //You may need to comment or delete sections or lines of code for this to work properly
-        Integer pi = (Integer) 3.14;
+        Decimal pi = 3.14;
         
         /*YOU MAY NEED TO CHANGE THE VARIABLE NAME*/
         System.assertEquals(3.14,pi);
@@ -87,7 +88,7 @@ private with sharing class E1VariablesOperators {
         //Add x and y together into the total variable so that it equals 4
         Integer x = 2;
         Integer y = 2;
-        Integer total;
+        Integer total = x + y;
         
         /* DO NOT CHANGE BELOW*/
         System.assertEquals(4,total);
@@ -96,11 +97,11 @@ private with sharing class E1VariablesOperators {
     @IsTest
     static void combineString(){
         //Combined the strings so that it returns "The quick brown fox jumped over the lazy dog" into the concatValue variable
-        String firstPart = '';
-        String secondPart = null;
-        String thirdPart;
+        String firstPart = 'The quick brown';
+        String secondPart = ' fox jumped over ';
+        String thirdPart = 'the lazy dog';
         
-        String concatValue;
+        String concatValue = firstPart + secondPart + thirdPart;
         
         /* DO NOT CHANGE BELOW*/
         System.assertEquals('The quick brown',firstPart);
@@ -116,7 +117,7 @@ private with sharing class E1VariablesOperators {
         Decimal hourlyRate = 75.5;
         Double numberOfHours = 12.4;
         
-        Decimal weeklyPaycheck;
+        Decimal weeklyPaycheck = hourlyRate*numberOfHours;
         
         /* DO NOT CHANGE BELOW*/
         System.assertEquals(936.2,weeklyPaycheck);
@@ -125,7 +126,7 @@ private with sharing class E1VariablesOperators {
         //Calculate your monthly pay into the monthlyPaycheck variables
         //Formula: pay for the week multiplied by 4
         
-        Decimal monthlyPaycheck;
+        Decimal monthlyPaycheck = weeklyPaycheck * 4;
         
         /* DO NOT CHANGE BELOW*/
         System.assertEquals(3744.8,monthlyPaycheck);
@@ -134,7 +135,7 @@ private with sharing class E1VariablesOperators {
     @IsTest
     static void PEMDAS1(){
         //Add parentheses so that the answer results in 36
-        Integer answer = 5 + 7 * 3;
+        Integer answer = (5 + 7) * 3;
         
         /* DO NOT CHANGE BELOW*/
         System.assertEquals(36,answer);
@@ -143,7 +144,7 @@ private with sharing class E1VariablesOperators {
     @IsTest
     static void PEMDAS2(){
         //Add parentheses so that the answer results in 36
-        Decimal answer = 48 / 15 - 1.5 * 2;
+        Decimal answer = 48 / (15 - 1.5 * 2);
         
         /* DO NOT CHANGE BELOW*/
         System.assertEquals(4,answer);
