@@ -3,29 +3,35 @@ public with sharing class InvoiceCalculator {
     /*
     Calculate the amount of money you will get after the transaction fees for an invoice
     Formula to calculate the transaction fees (Amount * 3% + 30 cents)
+
     Calculate the amount needed to offset the transaction fees for an invoice
     Formula to calculate the offset amount (amount / (1 - 3%)) * 3%
     Example: https://weareindy.com/stripe-fee-calculator
      */
-    public static void calculateInvoiceAmountPart1(){
+    public static void calculateInvoiceAmountPart1(Integer amount){
+    
         //Every transaction has a flat fee of 30 cents and this never changes
+        Final Decimal FLAT_FEE = 0.30;
+    
         //Every transaction has a percentage based fee 3% and this never changes
-
+        Final Decimal BASED_FEE = (amount*3)/100;
         //Print out flat the transaction fees
-
+        System.debug('Flat fee ' + FLAT_FEE);
         //Print out percentage the transaction fees
-
+        System.debug('Based fee ' + BASED_FEE);
         //Print out the invoice Amount
-
+        System.debug('Transaction Amount ' + amount);
         //Print out the total fees for our invoice
         //Hint: (Amount * 3% + 30 cents)
-
+        Decimal totalFees = BASED_FEE + FLAT_FEE;
+        System.debug('Total fees ' + totalFees);
         //Print out how much money you will have left over
-
+        System.debug('Total with discounts ' + (amount - totalFees));
         //Print out how much additional money you need to ask for to make up the fees
         //Hint: (amount / (1 - 3%)) * 3%
-
+        System.debug('Additional compensatin to ask ' + totalFees);
         //Print out the new total of much you should ask for to meet the original invoice amount with fees
+        System.debug('New total ' + (amount + totalFees));
     }
 
     /*
