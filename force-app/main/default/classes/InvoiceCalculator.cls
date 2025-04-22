@@ -34,16 +34,43 @@ public with sharing class InvoiceCalculator {
         System.debug('New total ' + (amount + totalFees));
     }
 
+
+
+
     /*
     You are give a list of hours work and the hourly rate on projects
     Loop over the list and calculate the hourly rate for the corresponding number of hours worked and hourly rate
      */
     public static void calculateHourlyRatePart2(){
         //Hourly rates provided - Changes these if needed to test other values - initial values {106.75, 119.73, 38.24, 108.16, 146.38, 30.45, 63.11, 15.33, 121.53, 30}
-        List<Decimal> ratesOnProjects = new List<Decimal>{106.75, 119.73, 38.24, 108.16, 146.38, 30.45, 63.11, 15.33, 121.53, 30};
-        //Hours worked provided - Changes these if needed to test other values - initial values {26.35, 14.69, 10.89, 20, 8.91, 46.23, 40.39, 43.42, 25.17, 40.18}
-        List<Double> hoursWorkedOnProjects = new List<Double>{26.35, 14.69, 10.89, 20, 8.91, 46.23, 40.39, 43.42, 25.17, 40.18};
+        List<Decimal> ratesOnProjects = new List<Decimal>{100, 100, 538.24, 100.16, 146.38, 30.45, 163.11, 15.33, 121.53, 80};
 
+        //Hours worked provided - Changes these if needed to test other values - initial values {26.35, 14.69, 10.89, 20, 8.91, 46.23, 40.39, 43.42, 25.17, 40.18}
+        List<Double> hoursWorkedOnProjects = new List<Double>{5, 30, 10.89, 20, 8.91, 46.23, 30.39, 23.42, 25.17, 4.18};
+
+        List<Decimal> totalMadePerProyect = new List <Decimal> {};
+
+        Decimal totalMade = 0;
+
+        /*for (Integer i; i < ratesOnProjects.size(); i++) {
+            totalMade = ratesOnProjects[i] * hoursWorkedOnProjects[i];
+            totalMadePerProyect.add(totalMade);
+        }*/
+
+        for (Integer i = 0; i < ratesOnProjects.size(); i++) {
+            if (ratesOnProjects[i] >= 80 && hoursWorkedOnProjects[i] < 40) {
+                totalMade = ratesOnProjects[i] * hoursWorkedOnProjects[i];
+                if (totalMade > 5000) {
+                    System.debug('Total made for project # ' + i + ': ' + totalMade);
+                    System.debug('Go rest you girlboss!');
+                    break;
+                } else {
+                    System.debug('Total made for project # ' + i + ': ' + totalMade);
+                    System.debug('You are doing amazing, keep going!');
+                }
+            }
+
+        }
         //Loop over the rates and hours
             //If the hourly rate is less than $80 then skip over it
             //If the hours worked is greater than 40 skip over it
@@ -54,6 +81,11 @@ public with sharing class InvoiceCalculator {
         //If the total amount earned is less than 5000 print out a motivational message
         //If the total amount earner is greater than 5000 print out a relaxing message
     }
+
+
+
+
+
 
 
     /*
