@@ -5,8 +5,8 @@ private class E3ClassMethods {
         //Return the number of characters in this string
         //Example: 'Hello World!' = 12
         //Hint: May need to change variable data types
-        Object longestEnglishWord = 'Pneumonoultramicroscopicsilicovolcanoconiosis';
-        Object numberOfCharacter = null;
+        String longestEnglishWord = 'Pneumonoultramicroscopicsilicovolcanoconiosis';
+        Integer numberOfCharacter = longestEnglishWord.length();
 
         /* DO NOT CHANGE BELOW*/
         System.assert(TestHelper.longestWord(numberOfCharacter, longestEnglishWord));
@@ -21,8 +21,10 @@ private class E3ClassMethods {
         /* DO NOT CHANGE BELOW*/
         String wannabeHashTag = ' S4lesforce!M3ntor$ Is T*he Bes\\t )';
         /* DO NOT CHANGE ABOVE*/
+        //String sinEspeciales = wannabeHashTag.replaceAll('[^a-zA-Z0-9]', '');
+        //String sinEspacios = sinEspeciales.trim();
 
-        String validHashtag = null;
+        String validHashtag = '#' + wannabeHashTag.replaceAll('[^a-zA-Z0-9]', '').trim();
 
         /* DO NOT CHANGE BELOW*/
         System.assertEquals('#S4lesforceM3ntorIsTheBest',validHashtag);
@@ -40,12 +42,13 @@ private class E3ClassMethods {
         for (Integer i = 0; i < cars.size(); i++){
             String currentCarName = cars[i];
             //start if statement
-                currentCarName = null;
-            //start else if statement
-                currentCarName = null;
-            //start else if statement
-                currentCarName = null;
-            //end if statement
+            if(String.isBlank(currentCarName)){
+                currentCarName = 'Supra';
+            } else if(currentCarName.isAllLowerCase()){ 
+                currentCarName = currentCarName.toUpperCase();
+            } else if (currentCarName.isAllUpperCase()){
+                currentCarName = currentCarName.toLowerCase();
+            }
 
             /* DO NOT CHANGE BELOW*/
             cars[i] = currentCarName; //Adds the currentCarName value back into the list of cars
@@ -62,8 +65,10 @@ private class E3ClassMethods {
         //Calculate the largest number from the list using the Math class
         List<Integer> numbers = new List<Integer>{8,23,123,2,435,6,82,327};
         Integer largestNumber = 0;
-        for (;;){
-            largestNumber = null;
+        for (Integer i; i < numbers.size(); i++){
+            if (numbers[i] > largestNumber) {
+                largestNumber = numbers[i];
+            }             
         }
 
         /* DO NOT CHANGE BELOW*/
@@ -113,8 +118,10 @@ private class E3ClassMethods {
     static void visitedDisney() {
         //Instantiate a date variables with todays date
         //Update the lastTimeVisitedDisney variable to 1 year ago to this day
-        Date today = null;
-        Date lastTimeVisitedDisney;
+        Date today = Date.today();
+        Date lastTimeVisitedDisney = today.addYears(-1);
+
+        System.debug(lastTimeVisitedDisney);
 
         /* DO NOT CHANGE BELOW*/
         System.assert(TestHelper.visitedDisney(lastTimeVisitedDisney));
